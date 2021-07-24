@@ -117,4 +117,6 @@ def main():
             print('\033[33mDeu velha!\033[m')
 
 
-main()
+if __name__ == '__main__':
+    main()
+
