@@ -298,6 +298,7 @@ def main():
             print('-' * 43)
         # Verificar se a quantidade de erros cometidos é igual ao maximo de
         # erros suportado ou se o usuario acertou a palavra, e mostra na tela.
+        mostrarForca(erros)
         checarVitoria(erros, palavra)
         continuar = continuarJogo()
 
