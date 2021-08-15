@@ -1,14 +1,12 @@
 """
 Objetivo:
 Girar matriza noventa graus, sentido horário.
-
 matriz original:
 [
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9]
 ]
-
 matriz final:
 [
     [7, 4, 1],
@@ -25,14 +23,15 @@ def girarMatriz(matriz: list, times: int = 1) -> list:
     :param times: quantidade de vezes que a matriz será rotacionada.
     :return: matriz rotacionada.
     """
-    if times % 4 == 0:
-        return matriz
-    elif (times % 3 == 0 or times % 4 == 3) and times % 2 != 0:
-        times = 3
-    elif times % 2 == 0:
-        times = 2
-    else:
-        times = 1
+    match times:
+        case _ if times % 4 == 0:
+            return matriz
+        case _ if ((times == 3 or times % 4 == 3) and times % 2 != 0):
+            times = 3
+        case _ if times % 2 == 0:
+            times = 2
+        case _:
+            times = 1
 
     for _ in range(times):
         matriz_scope: list = [[] for _ in range(len(matriz[1]))]
@@ -50,8 +49,7 @@ matriz_exemplo = [
     [7, 8, 9]
 ]
 
-matriz_rotacionada = girarMatriz(matriz_exemplo, 5)
-
+matriz_rotacionada = girarMatriz(matriz_exemplo, 6)
 # Mostrando:
 for linha in matriz_rotacionada:
     print(linha)
