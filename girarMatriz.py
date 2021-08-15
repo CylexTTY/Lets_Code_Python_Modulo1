@@ -27,7 +27,7 @@ def girarMatriz(matriz: list, times: int = 1) -> list:
     """
     if times % 4 == 0:
         return matriz
-    elif times % 3 == 0 or times % 4 == 3:
+    elif (times % 3 == 0 or times % 4 == 3) and times % 2 != 0:
         times = 3
     elif times % 2 == 0:
         times = 2
