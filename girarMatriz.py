@@ -1,4 +1,4 @@
-'''
+"""
 Objetivo:
 Girar matriza noventa graus, sentido horário.
 
@@ -15,15 +15,15 @@ matriz final:
     [8, 5, 2],
     [9, 6, 3]
 ]
-'''
+"""
 
 
 def girarMatriz(matriz: list, times: int = 1) -> list:
     """
-    Rotaciona a matriz noventa graus, sentido horário 'n' vezes.
+    Rotaciona a matriz noventa graus sentido horário 'n' vezes.
     :param matriz: matriz solicitada.
-    :param times: qunatidade de vezes que a mateiz será rotaicionada.
-    :return: matriz rotacionada 90º sentido horário 'n' vezes.
+    :param times: quantidade de vezes que a matriz será rotacionada.
+    :return: matriz rotacionada.
     """
     if times % 4 == 0:
         return matriz
@@ -35,15 +35,13 @@ def girarMatriz(matriz: list, times: int = 1) -> list:
         times = 1
 
     for _ in range(times):
-        matriz_rotate: list = []
-        for i in range(len(matriz[1])):
-            matriz_rotate.append([])
-        for linha in range(len(matriz)):
+        matriz_scope: list = [[] for _ in range(len(matriz[1]))]
+        for _ in range(len(matriz)):
             last = matriz.pop(-1)
             for i, item in enumerate(last):
-                matriz_rotate[i].append(item)
-        matriz = matriz_rotate
-    return matriz_rotate
+                matriz_scope[i].append(item)
+        matriz = matriz_scope
+    return matriz
 
 
 matriz_exemplo = [
