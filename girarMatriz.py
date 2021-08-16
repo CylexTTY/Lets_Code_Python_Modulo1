@@ -34,10 +34,10 @@ def girarMatriz(matriz: list, times: int = 1) -> list:
             times = 1
 
     matriz_scope: list = [[] for _ in range(len(matriz[1]))]
-    for j in range(len(matriz)-1, -1, -1):
-        last = matriz.pop(j)
-        for k, item in enumerate(last):
-            matriz_scope[k].append(item)
+    for i in range(len(matriz)-1, -1, -1):
+        last = matriz[i]
+        for j, item in enumerate(last):
+            matriz_scope[j].append(item)
     return girarMatriz(matriz_scope, times-1)
 
 
@@ -47,7 +47,9 @@ matriz_exemplo = [
     [7, 8, 9]
 ]
 
+
 matriz_rotacionada = girarMatriz(matriz_exemplo, 3)
+
 # Mostrando:
 for linha in matriz_rotacionada:
     print(linha)
