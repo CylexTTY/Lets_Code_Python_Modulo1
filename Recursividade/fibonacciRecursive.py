@@ -1,13 +1,13 @@
 class Fibonacci(object):
 
-    def findIdx(self, n):
+    def findIdx(self, n) -> int:
         if n == 1:
             return 0
         if n <= 3:
             return 1
         return self.findIdx(n - 1) + self.findIdx(n - 2)
 
-    def sequence(self, n_numbers):
+    def sequence(self, n_numbers) -> list:
         return [self.findIdx(i) for i in range(n_numbers+1)][1:]
 
 fib = Fibonacci()
