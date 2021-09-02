@@ -2,10 +2,10 @@ import random
 
 
 def bubbleSort(lista):
-    for _ in range(len(lista) - 1):
-        for i in range(1, len(lista)):
-            if lista[i - 1] > lista[i]:
-                lista[i - 1], lista[i] = lista[i], lista[i - 1]
+    for i in range(len(lista) - 1):
+        for j in range(1, len(lista) - i):
+            if lista[j - 1] > lista[j]:
+                lista[j - 1], lista[j] = lista[j], lista[j - 1]
     return lista
 
 
