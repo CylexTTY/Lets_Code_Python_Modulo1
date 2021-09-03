@@ -2,11 +2,7 @@ def maxList(lista, count=0):
     num_list = [maxList(el)
                 if isinstance(el, list) else el
                 for el in lista]
-    maior = [n
-             for n in num_list
-             if not False in [True
-                              if n >= num else False
-                              for num in num_list]]
+    maior = [n for n in num_list if False not in [n >= num for num in num_list]]
     if count == 0:
         return maior[0]
     elif count == 1:
@@ -17,11 +13,7 @@ def minList(lista, count=0):
     num_list = [minList(el)
                 if isinstance(el, list) else el
                 for el in lista]
-    menor = [n
-             for n in num_list
-             if not False in [True
-                              if n <= num else False
-                              for num in num_list]]
+    menor = [n for n in num_list if False not in [n <= num for num in num_list]]
     if count == 0:
         return menor[0]
     elif count == 1:
